@@ -4,6 +4,7 @@ from langchain_pinecone import PineconeVectorStore
 from common.llm import get_embeddings
 import os
 
+
 def ingest_pdf(path: str):
     loader = PyPDFLoader(path)
     docs = loader.load()
@@ -16,6 +17,7 @@ def ingest_pdf(path: str):
         embedding=get_embeddings(),
         index_name=os.environ["PINECONE_INDEX_NAME"]
     )
+
 
 if __name__ == "__main__":
     ingest_pdf("sample.pdf")

@@ -1,6 +1,7 @@
 from rag_pipeline import run_rag
 import json
 
+
 def handler(event, context):
     body = json.loads(event.get("body", "{}"))
     question = body.get("question")

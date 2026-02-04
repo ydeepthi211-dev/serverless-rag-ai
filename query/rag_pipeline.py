@@ -3,6 +3,7 @@ from langchain import RetrievalQA
 from common.llm import get_llm, get_embeddings
 import os
 
+
 def run_rag(question: str):
     vectorstore = PineconeVectorStore(
         index_name=os.environ["PINECONE_INDEX_NAME"],
