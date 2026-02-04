@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  RagFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: python3.10
+      Handler: lambda_handler.handler
+      CodeUri: query/
+      Timeout: 30
+      MemorySize: 1024
+      Environment:
+        Variables:
+          PINECONE_API_KEY: ""
+          PINECONE_INDEX_NAME: ""
+          OPENAI_API_KEY: ""
